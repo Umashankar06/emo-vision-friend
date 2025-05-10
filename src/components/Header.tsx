@@ -11,7 +11,7 @@ const Header = () => {
           <h1 className="text-2xl sm:text-3xl font-bold">FaceRecg</h1>
         </div>
         <div className="hidden md:block">
-          <p className="text-sm font-light">AI-Powered Emotion Recognition</p>
+          <p className="text-sm font-light">Emotion Recognition Tool</p>
         </div>
       </div>
     </header>

@@ -13,10 +13,10 @@ const Index = () => {
       <main className="flex-1 container mx-auto py-8 px-4">
         <section className="mb-10 text-center">
           <h2 className="text-3xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-            AI-Powered Emotion Recognition
+            Advanced Emotion Recognition
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            FaceRecg uses artificial intelligence to detect and analyze emotions from your face.
+            FaceRecg uses advanced technology to detect and analyze emotions from your face.
             Try it now with your webcam or upload an image!
           </p>
         </section>
@@ -46,7 +46,7 @@ const Index = () => {
               </div>
               <h4 className="font-medium mb-2">Analyze</h4>
               <p className="text-sm text-muted-foreground">
-                Our AI model detects facial features and analyzes them to determine your emotional state.
+                Our system detects facial features and analyzes them to determine your emotional state.
               </p>
             </div>
             
