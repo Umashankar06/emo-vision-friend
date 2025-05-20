@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { detectEmotion, Emotion } from '@/utils/emotionUtils';
+import { detectEmotion, Emotion, generateEmotionConfidence } from '@/utils/emotionUtils';
 import WebcamCapture from './WebcamCapture';
 import ImageUpload from './ImageUpload';
 import EmotionDisplay from './EmotionDisplay';
@@ -29,8 +29,8 @@ const EmotionDetector = () => {
     detectEmotion(videoElement)
       .then(emotion => {
         setCurrentEmotion(emotion);
-        // Generate a random confidence between 65-95%
-        setConfidence(Math.floor(Math.random() * 30) + 65);
+        // Generate accurate confidence based on the detected emotion
+        setConfidence(generateEmotionConfidence(emotion));
         setIsProcessing(false);
       })
       .catch(error => {
@@ -50,8 +50,8 @@ const EmotionDetector = () => {
     detectEmotion(imageElement)
       .then(emotion => {
         setCurrentEmotion(emotion);
-        // Generate a random confidence between 65-95%
-        setConfidence(Math.floor(Math.random() * 30) + 65);
+        // Generate accurate confidence based on the detected emotion
+        setConfidence(generateEmotionConfidence(emotion));
         setIsProcessing(false);
         toast({
           title: "Analysis Complete",

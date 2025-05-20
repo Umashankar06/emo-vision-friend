@@ -1,6 +1,7 @@
+
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Emotion, emotions, getEmotionDetails } from '@/utils/emotionUtils';
+import { Emotion, emotions, getEmotionDetails, generateEmotionConfidence } from '@/utils/emotionUtils';
 
 interface EmotionDisplayProps {
   emotion: Emotion | null;
@@ -13,8 +14,8 @@ const EmotionDisplay: React.FC<EmotionDisplayProps> = ({ emotion, confidence = 0
   
   useEffect(() => {
     if (emotion) {
-      // Generate a realistic looking confidence value between 65-95%
-      setDynamicConfidence(Math.floor(Math.random() * 30) + 65);
+      // Generate a realistic looking confidence value using our new function
+      setDynamicConfidence(emotion ? generateEmotionConfidence(emotion) : 85);
       setAnimate(true);
       const timer = setTimeout(() => setAnimate(false), 1000);
       return () => clearTimeout(timer);
